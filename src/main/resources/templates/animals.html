@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h1>All users in the Blog</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Website</th>
+            <th>Website</th>
+            <th>Website</th>
+        </tr>
+        <tr th:each="animal : ${animals}">
+            <td><span th:text="${animal.id_animal}"></span></td>
+            <td><span th:text="${animal.tamanho}"></span></td>
+            <td><span th:text="${animal.n_cientifico}"></span></td>
+            <td><span th:text="${animal.id_habitat}"></span></td>
+            <td><span th:text="${animal.especie}"></span></td>
+            <td><span th:text="${animal.id_vet}"></span></td>
+            <td><span th:text="${animal.nome}"></span></td>
+            <td><span th:text="${animal.idade}"></span></td>
+            <td><span th:text="${animal.peso}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
