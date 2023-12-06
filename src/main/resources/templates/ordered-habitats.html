@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZooBoolDB</title>
+</head>
+<body>
+<header>
+    <h1>Habitats</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>IdHabitat</th>
+            <th>IdAla</th>
+            <th>IdTratador</th>
+            <th>Tipo</th>
+            <th>N_Espécie</th>
+            <th>Horario_Trat</th>
+        </tr>
+        <tr th:each="habitat : ${habitats}">
+            <td><span th:text="${habitat.id_habitat}"></span></td>
+            <td><span th:text="${habitat.id_ala}"></span></td>
+            <td><span th:text="${habitat.id_tratador}"></span></td>
+            <td><span th:text="${habitat.tipo}"></span></td>
+            <td><span th:text="${habitat.n_especies}"></span></td>
+            <td><span th:text="${habitat.horario_trat}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
