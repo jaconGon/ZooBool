@@ -180,11 +180,11 @@
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="Nome" name="name"/>
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="Sobrenome" name="last_name"/>
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="CPF" name="cpf"/>
-        <select id="filterSelect">
-            <option value="mamifero"><a href="/mamiferos">Mamífero</a></option>
+        <select id="filterSelect" onchange="redirectAnimalPage(this)">
             <option value="" disabled selected>Classe</option>
             <option value="all"><a href="/animals">All</a></option>
-            <option value="reptil"><a href="/repteis">Réptil</a></option>
+            <option value="mamifero">Mamífero</option>
+            <option value="reptil">Réptil</option>
         </select>
         <input type="number" id="resultsNumber" placeholder="Results per page" min="1">
         <button id="searchButton" onclick="searchData()">Pesquisar</button>
