@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import br.com.unifal.zoobool.exception.ZeladorNotFoundException;
 import java.util.List;
-import br.com.unifal.zoobool.exception.InvalidZeladorException;
 import java.util.Objects;
 
 
@@ -18,7 +17,7 @@ public class ZeladorService {
 
     private final ZeladorRepository repository;
 
-    public List<Zelador> getAllHabitats(){
+    public List<Zelador> getAllZeladores(){
 
         return repository.findAll();
     }
