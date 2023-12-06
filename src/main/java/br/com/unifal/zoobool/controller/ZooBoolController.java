@@ -138,6 +138,14 @@ public class ZooBoolController {
 
     }
 
+    @GetMapping("/orderedanimalztoa")
+    public String orderedAnimalZtoA(Model model) {
+        List<Animal> animais = animalservice.orderAnimalZtoA();
+        model.addAttribute("animais", animais);
+        return "ordered-animals";
+
+    }
+
 
     //============================funcionarios============================//
 
