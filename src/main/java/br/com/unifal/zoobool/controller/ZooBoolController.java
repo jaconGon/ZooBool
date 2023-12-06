@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -34,6 +35,7 @@ public class ZooBoolController {
     private final ReptilService reptilservice;
 
     private final MamiferoService mamiferoservice;
+    private final AdminService adminservice;
 
 
 //===============================index===============================//
@@ -48,6 +50,18 @@ public class ZooBoolController {
         return "home";
     }
 
+//==============================admin=================================//
+
+    @PostMapping(value = "/home")
+    public String login(@ModelAttribute Admin admin, Model model) {
+        if (adminservice.autenticate(admin.getUsername(), admin.getPassword())) {
+            return "/home";
+        } else {
+            model.addAttribute("mensagem", "Falha na autenticação");
+            return "/";
+        }
+    }
+
     
 //==============================animal===============================//
     @GetMapping("/animals")
@@ -57,18 +71,47 @@ public class ZooBoolController {
         return "animals";
     }
 
+//    @GetMapping("/animal")
+//    public String animal(Animal animal) {
+//        return "newanimal";
+//    }
+//
+//
+//    @PostMapping("/animal")
+//    public String newAnimal(@ModelAttribute("animal") Animal animal) {
+//        log.info("Novo animal cadastrado");
+//        animalservice.add(animal);
+//        return "newanimal";
+//    }
 
-    @GetMapping("/animal")
-    public String animal(Animal animal) {
-        return "newanimal";
+    @GetMapping("/addAnimal")
+    public String getAddAnimal(){
+        return "new-animal";
     }
 
+    @PostMapping("/addAnimal")
+    public String newGuest(@RequestParam String tamanho,
+                           @RequestParam String n_cientifico,
+                           @RequestParam Integer id_habitat,
+                           @RequestParam String especie,
+                           @RequestParam Integer id_vet,
+                           @RequestParam Integer idade,
+                           @RequestParam Float peso,
+                           @RequestParam String nome) {
+        Animal newAnimal = Animal.builder()
+                .nome(nome)
+                .tamanho(tamanho)
+                .n_cientifico(n_cientifico)
+                .id_habitat(id_habitat)
+                .especie(especie)
+                .id_vet(id_vet)
+                .idade(idade)
+                .peso(peso)
+                .build();
 
-    @PostMapping("/animal")
-    public String newAnimal(@ModelAttribute("animal") Animal animal) {
-        log.info("Novo animal cadastrado");
-        animalservice.add(animal);
-        return "newanimal";
+        animalservice.saveAnimal(newAnimal);
+
+        return "redirect:/animals";
     }
 
 
@@ -105,12 +148,42 @@ public class ZooBoolController {
 
 
     //============================funcionarios============================//
+
+
+
     @GetMapping("/funcionarios")
     public String funcionario(Model model) {
         List<Funcionario> funcionarios = funcionarioservice.getAllFuncionarios();
         model.addAttribute("funcionarios", funcionarios);
         return "funcionarios";
     }
+
+    @GetMapping("/addFuncionario")
+    public String getAddGuest(){
+        return "new-funcionario";
+    }
+
+    @PostMapping("/addFuncionario")
+    public String newGuest(@RequestParam String pnome,
+                           @RequestParam String snome,
+                           @RequestParam String cpf,
+                           @RequestParam String telefone,
+                           @RequestParam Float salario,
+                           @RequestParam Integer horas_trabalho) {
+        Funcionario newFuncionario = Funcionario.builder()
+                .pnome(pnome)
+                .snome(snome)
+                .cpf(cpf)
+                .telefone(telefone)
+                .salario(salario)
+                .horas_trabalho(horas_trabalho)
+                .build();
+
+        funcionarioservice.saveFuncionario(newFuncionario);
+
+        return "redirect:/funcionarios";
+    }
+
 
 
     //==============================alas=================================//
@@ -160,4 +233,5 @@ public class ZooBoolController {
         model.addAttribute("tratadores", tratadores);
         return "tratadores";
     }
+
 }
