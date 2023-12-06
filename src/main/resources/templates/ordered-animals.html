@@ -152,11 +152,11 @@
         }
         th a {
             text-decoration: none;
-            color: #333;
+            color: #fff;
         }
 
         th a:hover {
-            color: #333; /* Mudando a cor ao passar o mouse */
+            color: #eee; /* Mudando a cor ao passar o mouse */
         }
     </style>
 </head>
@@ -172,6 +172,27 @@
     <a href="/alas">Alas</a>
     <a href="/" class="sign-out">Sign Out</a>
 </nav>
+<div class="main-content">
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Pesquisar...">
+        <input class="guests-input" type="text" id="txtBuscaH" placeholder="Nome" name="name"/>
+        <input class="guests-input" type="text" id="txtBuscaH" placeholder="Sobrenome" name="last_name"/>
+        <input class="guests-input" type="text" id="txtBuscaH" placeholder="CPF" name="cpf"/>
+        <select id="filterSelect">
+            <option value="" disabled selected>Classe</option>
+            <option value="all">All</option>
+            <option value="mamifero">Mamífero</option>
+            <option value="reptil">Réptil</option>
+        </select>
+        <input type="number" id="resultsNumber" placeholder="Results per page" min="1">
+        <button id="searchButton" onclick="searchData()">Pesquisar</button>
+        <button id="editButton" onclick="searchData()">Editar</button>
+        <div class="guest-field" id="addButton">
+            <a href="/addAnimal">Cadastrar</a>
+        </div>
+        <button id="removeButton" onclick="removeInfo()">Remover</button>
+    </div>
+</div>
 <main>
     <table>
         <tr>
