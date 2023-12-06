@@ -1,14 +1,37 @@
-# Arquivos de saída gerados pelo Gradle
+HELP.md
+.gradle
 build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Arquivos de cache do Gradle
-.gradle/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
 
-# Arquivos de configuração específicos do usuário para o Gradle
-gradle.properties
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
-# Logs de compilação e outros arquivos temporários do Gradle
-*.log
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
-# Cache de dependências do Gradle
-.caches/
+### VS Code ###
+.vscode/
