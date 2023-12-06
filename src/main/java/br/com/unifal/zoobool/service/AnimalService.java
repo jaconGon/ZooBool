@@ -69,4 +69,9 @@ public class AnimalService {
 
     }
 
+    public List<Animal> filtroNome() {
+        return repository.filtroNome();
+
+    }
+
 }

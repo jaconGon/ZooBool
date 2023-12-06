@@ -162,6 +162,14 @@ public class ZooBoolController {
 
     }
 
+    @GetMapping("/filtronome")
+    public String filtro_nome(Model model) {
+        List<Animal> animais = animalservice.filtroNome();
+        model.addAttribute("animais", animais);
+        return "filtered-animals-no";
+
+    }
+
 
     //============================funcionarios============================//
 

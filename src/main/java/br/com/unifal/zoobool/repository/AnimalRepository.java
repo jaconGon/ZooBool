@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 
+
     @Query("SELECT g FROM Animal g ORDER BY g.nome ASC")
     List<Animal> orderAnimalAtoZ();
 
@@ -21,5 +22,8 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 
     @Query("SELECT g FROM Animal g WHERE g.especie LIKE '%tartaruga%'")
     List<Animal> filtroTipo();
+
+    @Query("SELECT g FROM Animal g WHERE g.nome LIKE '%na%'")
+    List<Animal> filtroNome();
     
 }
