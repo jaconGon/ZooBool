@@ -180,9 +180,9 @@
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="Nome" name="name"/>
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="Sobrenome" name="last_name"/>
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="CPF" name="cpf"/>
-        <select id="filterSelect" onchange="redirectAnimalPage(this)">
+        <select id="filterSelect">
             <option value="" disabled selected>Classe</option>
-            <option value="all"><a href="/animals">All</a></option>
+            <option value="all">All</option>
             <option value="mamifero">Mamífero</option>
             <option value="reptil">Réptil</option>
         </select>
@@ -221,20 +221,5 @@
         </tr>
     </table>
 </main>
-<script>
-    function redirectAnimalPage(select) {
-        var selectedValue = select.value;
-
-        if (selectedValue === "mamifero") {
-            window.location.href = "/mamiferos"; // Substitua pelo URL mapeado no Spring Boot
-        } else if (selectedValue === "reptil") {
-            window.location.href = "/repteis"; // Substitua pelo URL mapeado no Spring Boot para répteis
-        } else if (selectedValue === "all") {
-            window.location.href = "/animals"; // Substitua pelo URL mapeado no Spring Boot para répteis
-        }
-        // Adicione outras condições conforme necessário para diferentes opções
-    }
-
-</script>
 </body>
 </html>

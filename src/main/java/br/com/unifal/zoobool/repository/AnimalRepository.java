@@ -16,6 +16,10 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
     @Query("SELECT g FROM Animal g ORDER BY g.nome DESC")
     List<Animal> orderAnimalZtoA();
 
+    @Query("SELECT g FROM Animal g WHERE g.tamanho = 'Grande'")
+    List<Animal> filtroTam();
 
+    @Query("SELECT g FROM Animal g WHERE g.especie LIKE '%tartaruga%'")
+    List<Animal> filtroTipo();
     
 }

@@ -66,8 +66,8 @@ public class ZooBoolController {
 //==============================animal===============================//
     @GetMapping("/animals")
     public String animal(Model model) {
-        List<Animal> animals = animalservice.getAllAnimals();
-        model.addAttribute("animals", animals);
+        List<Animal> animais = animalservice.getAllAnimals();
+        model.addAttribute("animais", animais);
         return "animals";
     }
 
@@ -143,6 +143,22 @@ public class ZooBoolController {
         List<Animal> animais = animalservice.orderAnimalZtoA();
         model.addAttribute("animais", animais);
         return "ordered-animals-z";
+    }
+
+    @GetMapping("/filtrotam")
+    public String filtro_tam(Model model) {
+        List<Animal> animais = animalservice.filtroTam();
+        model.addAttribute("animais", animais);
+        return "filtered-animals-ta";
+
+    }
+
+    @GetMapping("/filtrotipo")
+    public String filtro_tipo(Model model) {
+        List<Animal> animais = animalservice.filtroTipo();
+        model.addAttribute("animais", animais);
+        return "filtered-animals-ti";
+
     }
 
 
