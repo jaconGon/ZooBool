@@ -5,38 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1924188b-f708-4b76-bb5f-dbe333efe7a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/exception/FuncionarioNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/exception/InvalidFuncionarioException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/repository/AlaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/repository/FuncionarioRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/service/AlaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/service/FuncionarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/alas.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/funcionarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ordered-animals.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ZooBool.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ZooBool.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooBoolHtmlsEManutencao.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/controller/ZooBoolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/controller/ZooBoolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/entity/Ala$AlaBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/entity/Ala$AlaBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/entity/Ala.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/entity/Ala.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Tratador.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Veterinario.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Zelador.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/service/AlaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/service/AlaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/service/AnimalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/br/com/unifal/zoobool/service/AnimalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/alas.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/alas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/animals.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/animals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/funcionarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/funcionarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Ala$AlaBuilder.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Ala.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AlaRepository.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AlaService.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ZooBoolController.class.uniqueId1" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ZooBoolController.class.uniqueId1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/controller/ZooBoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/controller/ZooBoolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/entity/Ala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/entity/Ala.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/repository/AnimalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/repository/AnimalRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/service/AnimalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/service/AnimalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ZooBool.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,18 +61,26 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/adding" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/entity/Ala.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/br/com/unifal/zoobool/entity/Tratador.java" root0="SKIP_INSPECTION" />
   </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -102,8 +104,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/leoja/IdeaProjects/trabalho marcos/db-java",
+    "git-widget-placeholder": "feature/adding",
+    "last_opened_file_path": "C:/Users/leoja/OneDrive/Área de Trabalho/trabalho gestão/ZooBool",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -140,6 +142,8 @@
       <workItem from="1701792409942" duration="6966000" />
       <workItem from="1701800049911" duration="2509000" />
       <workItem from="1701810550260" duration="6049000" />
+      <workItem from="1701829060330" duration="546000" />
+      <workItem from="1701829728122" duration="5286000" />
     </task>
     <servers />
   </component>
@@ -151,7 +155,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/feature/adding" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

@@ -44,4 +44,8 @@ public class AnimalService {
         return repository.save(animal);
     }
 
+    public List<Animal> orderAnimalAtoZ() {
+        return repository.orderAnimalAtoZ();
+    }
+
 }
