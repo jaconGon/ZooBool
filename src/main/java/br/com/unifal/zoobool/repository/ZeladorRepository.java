@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface ZeladorRepository extends JpaRepository<Zelador, Integer> {
 
 
+
+
 }
