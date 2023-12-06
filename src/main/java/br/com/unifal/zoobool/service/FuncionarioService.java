@@ -57,5 +57,4 @@ public class FuncionarioService {
         throw new FuncionarioNotFoundException(String.format("User with id[%d] not found!!", id));
     }
 
-
 }
