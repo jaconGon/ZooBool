@@ -71,19 +71,18 @@ public class ZooBoolController {
         return "animals";
     }
 
-
-    @GetMapping("/animal")
-    public String animal(Animal animal) {
-        return "newanimal";
-    }
-
-
-    @PostMapping("/animal")
-    public String newAnimal(@ModelAttribute("animal") Animal animal) {
-        log.info("Novo animal cadastrado");
-        animalservice.add(animal);
-        return "newanimal";
-    }
+//    @GetMapping("/animal")
+//    public String animal(Animal animal) {
+//        return "newanimal";
+//    }
+//
+//
+//    @PostMapping("/animal")
+//    public String newAnimal(@ModelAttribute("animal") Animal animal) {
+//        log.info("Novo animal cadastrado");
+//        animalservice.add(animal);
+//        return "newanimal";
+//    }
 
     @GetMapping("/addAnimal")
     public String getAddAnimal(){
