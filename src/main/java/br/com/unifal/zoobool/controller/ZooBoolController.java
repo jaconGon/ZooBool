@@ -18,9 +18,7 @@ import java.util.List;
 public class ZooBoolController {
 
     private final AnimalService animalservice;
-
     private final FuncionarioService funcionarioservice;
-
     private final AlaService alaservice;
 
     private final HabitatService habitatservice;
@@ -37,6 +35,9 @@ public class ZooBoolController {
 
     private final MamiferoService mamiferoservice;
 
+
+//===============================index===============================//
+
     @GetMapping("/")
     public String getIndex(){
         return "index";
@@ -44,6 +45,17 @@ public class ZooBoolController {
     @GetMapping("/home")
     public String getHome(){
         return "home";
+    }
+
+
+
+
+//==============================animal===============================//
+    @GetMapping("/animals")
+    public String animal(Model model){
+        List<Animal> animals = animalservice.getAllAnimals();
+        model.addAttribute("animals", animals);
+        return "animals";
     }
 
 
@@ -59,6 +71,7 @@ public class ZooBoolController {
         animalservice.add(animal);
         return "newanimal";
     }
+
 
     @GetMapping("/mamiferos")
     public String mamifero(Model model){
@@ -79,9 +92,17 @@ public class ZooBoolController {
         List<Animal> animals = animalservice.getAllAnimals();
         model.addAttribute("animals", animals);
         return "animals";
+
+    @GetMapping("/orderedanimalatoz")
+    public String orderedAnimalAtoZ(Model model){
+        List<Animal> animais = animalservice.orderAnimalAtoZ();
+        model.addAttribute("animais", animais);
+        return "ordered-animals";
+
     }
 
 
+//============================funcionarios============================//
     @GetMapping("/funcionarios")
     public String funcionario(Model model){
         List<Funcionario> funcionarios = funcionarioservice.getAllFuncionarios();
@@ -89,6 +110,10 @@ public class ZooBoolController {
         return "funcionarios";
     }
 
+
+
+
+//==============================alas=================================//
     @GetMapping("/alas")
     public String ala(Model model){
         List<Ala> alas = alaservice.getAllAlas();
@@ -96,6 +121,9 @@ public class ZooBoolController {
         return "alas";
     }
 
+
+
+//=============================habitats==============================//
     @GetMapping("/habitats")
     public String habitat(Model model){
         List<Habitat> habitats = habitatservice.getAllHabitats();
@@ -103,12 +131,17 @@ public class ZooBoolController {
         return "habitats";
     }
 
+
+
+
+//==========================manutencoes=============================//
     @GetMapping("/manutencoes")
     public String manutencao(Model model){
         List<Manutencao> manutencoes = manutencaoservice.getAllManutencoes();
         model.addAttribute("manutencoes", manutencoes);
         return "manutencoes";
     }
+
 
     @GetMapping("/zeladores")
     public String zelador(Model model){
@@ -130,5 +163,6 @@ public class ZooBoolController {
         model.addAttribute("tratadores", tratadores);
         return "tratadores";
     }
+
 
 }

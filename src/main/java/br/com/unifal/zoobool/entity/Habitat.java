@@ -19,7 +19,9 @@ public class Habitat implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_habitat;
 
-    private Integer id_ala;
+    @ManyToOne
+    @JoinColumn(name = "id_ala")
+    private Ala id_ala;
 
     private Integer id_tratador;
 
