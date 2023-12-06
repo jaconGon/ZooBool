@@ -19,7 +19,9 @@ public class Manutencao implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_ala;
 
-    private Integer id_zelador;
+    @OneToOne
+    @JoinColumn(name = "id_zelador")
+    private Zelador id_zelador;
 
 
 }
