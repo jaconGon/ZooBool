@@ -170,12 +170,12 @@
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="Nome" name="name"/>
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="Sobrenome" name="last_name"/>
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="CPF" name="cpf"/>
-        <select id="filterSelect">
+        <select id="filterSelect" onchange="redirectFuncionarioPage(this)">
             <option value="" disabled selected>Cargo</option>
             <option value="all">All</option>
-            <option value="veterinario">Veterinário</option>
-            <option value="tratador">Tratador</option>
-            <option value="zelador">Zelador</option>
+            <option value="veterinario"><a href="/veterinarios">Veterinário</a></option>
+            <option value="tratador"><a href="/tratadores">Tratador</a></option>
+            <option value="zelador"><a href="/zeladores">Zelador</a></option>
         </select>
         <input type="number" id="resultsNumber" placeholder="Results per page" min="1">
         <button id="searchButton" onclick="searchData()">Pesquisar</button>
@@ -209,5 +209,22 @@
         </tr>
     </table>
 </main>
+<script>
+    function redirectFuncionarioPage(select) {
+        var selectedValue = select.value;
+
+        if (selectedValue === "veterinario") {
+            window.location.href = "/veterinarios"; // Substitua pelo URL mapeado no Spring Boot
+        } else if (selectedValue === "zelador") {
+            window.location.href = "/zeladores"; // Substitua pelo URL mapeado no Spring Boot para répteis
+        } else if (selectedValue === "all") {
+            window.location.href = "/funcionarios"; // Substitua pelo URL mapeado no Spring Boot para répteis
+        } else if (selectedValue === "tratador") {
+            window.location.href = "/tratadores.html"; // Substitua pelo URL mapeado no Spring Boot para répteis
+        }
+        // Adicione outras condições conforme necessário para diferentes opções
+    }
+
+</script>
 </body>
 </html>
