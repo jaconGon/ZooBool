@@ -53,9 +53,8 @@ public class FuncionarioService {
     public void deleteFuncionario(Integer id) {
         if (!Objects.isNull(findById(id))) {
             repository.deleteById(id);
-        } else {
-            throw new FuncionarioNotFoundException(String.format("User with id[%d] not found!!", id));
         }
+        throw new FuncionarioNotFoundException(String.format("User with id[%d] not found!!", id));
     }
 
 
