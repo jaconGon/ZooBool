@@ -34,6 +34,7 @@ public class ZooBoolController {
     private final ReptilService reptilservice;
 
     private final MamiferoService mamiferoservice;
+    private final AdminService adminservice;
 
 
 //===============================index===============================//
@@ -46,6 +47,18 @@ public class ZooBoolController {
     @GetMapping("/home")
     public String getHome() {
         return "home";
+    }
+
+//==============================admin=================================//
+
+    @PostMapping(value = "/home")
+    public String login(@ModelAttribute Admin admin, Model model) {
+        if (adminservice.autenticate(admin.getUsername(), admin.getPassword())) {
+            return "/home";
+        } else {
+            model.addAttribute("mensagem", "Falha na autenticação");
+            return "/";
+        }
     }
 
     
@@ -152,4 +165,5 @@ public class ZooBoolController {
         model.addAttribute("tratadores", tratadores);
         return "tratadores";
     }
+
 }
