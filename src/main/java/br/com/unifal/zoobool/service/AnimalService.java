@@ -74,4 +74,16 @@ public class AnimalService {
 
     }
 
+    public List<Animal> filtroHabPe() {
+        return repository.filtroHabPe();
+
+    }
+
+    public List<Animal> filtroVetPe(){
+        return repository.filtroVetPe();
+
+    }
+
+
+
 }

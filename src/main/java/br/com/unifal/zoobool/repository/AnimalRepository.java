@@ -25,5 +25,15 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 
     @Query("SELECT g FROM Animal g WHERE g.nome LIKE '%na%'")
     List<Animal> filtroNome();
+
+    @Query("SELECT g FROM Animal g WHERE g.tamanho = 'Pequeno' " +
+            "UNION SELECT p FROM Animal p WHERE p.id_habitat = 43")
+    List<Animal> filtroHabPe();
+
+    @Query("select g from Animal g where g.id_vet = 1 " +
+            "UNION select p from Animal p where p.peso = 30")
+    List<Animal> filtroVetPe();
+
+
     
 }
