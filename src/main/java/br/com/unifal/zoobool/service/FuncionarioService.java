@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 
 @AllArgsConstructor
@@ -22,12 +21,12 @@ public class FuncionarioService {
 
     private final FuncionarioRepository repository;
 
-    public List<Funcionario> getAllFuncionarios() {
+    public List<Funcionario> getAllFuncionarios(){
         return repository.findAll();
     }
 
-    public Funcionario findById(Integer id) {
-        if (Objects.isNull(id)) {
+    public Funcionario findById(Integer id){
+        if (Objects.isNull(id)){
             throw new IllegalArgumentException("Id null when fetching for an user.");
         }
         return repository.findById(id).orElseThrow(() ->
@@ -37,10 +36,10 @@ public class FuncionarioService {
     }
 
     public Funcionario add(Funcionario funcionario) {
-        if (Objects.isNull(funcionario) || Objects.isNull(funcionario.getId_func())
-                || Objects.isNull(funcionario.getPnome()) || Objects.isNull(funcionario.getSnome())
-                || Objects.isNull(funcionario.getCpf()) || Objects.isNull(funcionario.getHoras_trabalho())
-                || Objects.isNull(funcionario.getSalario()) || Objects.isNull(funcionario.getTelefone())
+        if(Objects.isNull(funcionario) || Objects.isNull (funcionario.getId_func())
+                || Objects.isNull (funcionario.getPnome()) || Objects.isNull (funcionario.getSnome())
+                || Objects.isNull (funcionario.getCpf()) || Objects.isNull (funcionario.getHoras_trabalho())
+                || Objects.isNull (funcionario.getSalario()) || Objects.isNull (funcionario.getTelefone())
         ) {
             throw new InvalidFuncionarioException();
         }
@@ -52,12 +51,12 @@ public class FuncionarioService {
     }
 
     public void deleteFuncionario(Integer id) {
-        Optional<Funcionario> funcionario = repository.findById(id);
-        if (funcionario.isPresent()) {
+        if (!Objects.isNull(findById(id))) {
             repository.deleteById(id);
         } else {
             throw new FuncionarioNotFoundException(String.format("User with id[%d] not found!!", id));
         }
     }
-}
 
+
+}
