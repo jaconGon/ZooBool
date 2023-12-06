@@ -1,6 +1,7 @@
 package br.com.unifal.zoobool.service;
 
 import br.com.unifal.zoobool.entity.Animal;
+import br.com.unifal.zoobool.entity.Funcionario;
 import br.com.unifal.zoobool.exception.AnimalNotFoundException;
 import br.com.unifal.zoobool.exception.InvalidAnimalException;
 import br.com.unifal.zoobool.repository.AnimalRepository;
@@ -46,6 +47,10 @@ public class AnimalService {
 
     public List<Animal> orderAnimalAtoZ() {
         return repository.orderAnimalAtoZ();
+    }
+
+    public void saveAnimal(Animal animal) {
+        repository.save(animal);
     }
 
 }

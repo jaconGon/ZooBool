@@ -85,6 +85,36 @@ public class ZooBoolController {
         return "newanimal";
     }
 
+    @GetMapping("/addAnimal")
+    public String getAddAnimal(){
+        return "new-animal";
+    }
+
+    @PostMapping("/addAnimal")
+    public String newGuest(@RequestParam String tamanho,
+                           @RequestParam String n_cientifico,
+                           @RequestParam Integer id_habitat,
+                           @RequestParam String especie,
+                           @RequestParam Integer id_vet,
+                           @RequestParam Integer idade,
+                           @RequestParam Float peso,
+                           @RequestParam String nome) {
+        Animal newAnimal = Animal.builder()
+                .nome(nome)
+                .tamanho(tamanho)
+                .n_cientifico(n_cientifico)
+                .id_habitat(id_habitat)
+                .especie(especie)
+                .id_vet(id_vet)
+                .idade(idade)
+                .peso(peso)
+                .build();
+
+        animalservice.saveAnimal(newAnimal);
+
+        return "redirect:/animals";
+    }
+
 
     @GetMapping("/mamiferos")
     public String mamifero(Model model) {
