@@ -168,6 +168,21 @@
             background-color: #2a7e5b;
         }
 
+        .delete-button {
+            text-decoration: none;
+            color: white;
+            background-color: #ff6347;
+            padding: 4px 8px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .delete-button:hover {
+            background-color: #ff0000;
+        }
+
+
     </style>
 </head>
 <body>
@@ -201,7 +216,6 @@
         <div class="guest-field" id="addButton">
             <a href="/addFuncionario" class="btn-cadastrar">Cadastrar</a>
         </div>
-        <button id="removeButton" onclick="removeInfo()">Remover</button>
     </div>
 </div>
 <main>
@@ -224,9 +238,10 @@
             <td><span th:text="${funcionario.salario}"></span></td>
             <td><span th:text="${funcionario.telefone}"></span></td>
             <td class="delete-link">
-                <a th:href="@{/deleteFuncionario/{id}(id=${funcionario.id_func})}" onclick="return confirm('Deletar funcionário?')">x</a>
-<!--                <a th:href="@{/updateGuest/{id}(id=${guest.guest_id})}">^</a>-->
+                <a th:href="@{/deleteFuncionario/{id}(id=${funcionario.id_func})}" onclick="return confirm('Deletar funcionário?')" class="delete-button">x</a>
+                <!--                <a th:href="@{/updateGuest/{id}(id=${guest.guest_id})}">^</a>-->
             </td>
+
         </tr>
     </table>
 </main>

@@ -111,6 +111,14 @@ public class ZooBoolController {
         return "redirect:/animals";
     }
 
+    @GetMapping("/deleteAnimal/{id_animal}")
+    public String getAnimal(@PathVariable Integer id_animal, Model model) {
+        animalservice.deleteAnimal(id_animal);
+        List<Animal> animais = animalservice.getAllAnimals();
+        model.addAttribute("animais", animais);
+        return "redirect:/animals";
+    }
+
 
     @GetMapping("/mamiferos")
     public String mamifero(Model model) {
