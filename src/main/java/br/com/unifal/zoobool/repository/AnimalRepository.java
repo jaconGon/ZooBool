@@ -12,4 +12,10 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 
     @Query("SELECT g FROM Animal g ORDER BY g.nome ASC")
     List<Animal> orderAnimalAtoZ();
+
+    @Query("SELECT g FROM Animal g ORDER BY g.nome DESC")
+    List<Animal> orderAnimalZtoA();
+
+
+    
 }
