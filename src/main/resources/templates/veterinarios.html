@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZooBoolDB</title>
+</head>
+<body>
+<header>
+    <h1>Veterinários</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>IdVeterinário</th>
+            <th>IdFuncionário</th>
+            <th>DiasDePlantão</th>
+            <th>Especialidade</th>
+        </tr>
+        <tr th:each="veterinario : ${veterinarios}">
+            <td><span th:text="${veterinario.id_vet}"></span></td>
+            <td><span th:text="${veterinario.id_func}"></span></td>
+            <td><span th:text="${veterinario.dias_de_plantao}"></span></td>
+            <td><span th:text="${veterinario.especialidade}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>

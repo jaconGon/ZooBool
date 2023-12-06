@@ -1,14 +1,11 @@
 package br.com.unifal.zoobool.controller;
 
-
+import br.com.unifal.zoobool.entity.Manutencao;
 import br.com.unifal.zoobool.entity.Ala;
 import br.com.unifal.zoobool.entity.Animal;
 import br.com.unifal.zoobool.entity.Funcionario;
 import br.com.unifal.zoobool.entity.Habitat;
-import br.com.unifal.zoobool.service.AlaService;
-import br.com.unifal.zoobool.service.AnimalService;
-import br.com.unifal.zoobool.service.FuncionarioService;
-import br.com.unifal.zoobool.service.HabitatService;
+import br.com.unifal.zoobool.service.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -31,6 +28,8 @@ public class ZooBoolController {
     private final AlaService alaservice;
 
     private final HabitatService habitatService;
+
+    private final ManutencaoService manutencaoService;
 
     @GetMapping("/")
     public String getHome(){
@@ -76,6 +75,13 @@ public class ZooBoolController {
         List<Habitat> habitats = habitatService.getAllHabitats();
         model.addAttribute("habitats", habitats);
         return "habitats";
+    }
+
+    @GetMapping("/manutencoes")
+    public String manutencao(Model model){
+        List<Manutencao> manutencoes = manutencaoService.getAllManutencoes();
+        model.addAttribute("manutencoes", manutencoes);
+        return "manutencoes";
     }
 
 }
