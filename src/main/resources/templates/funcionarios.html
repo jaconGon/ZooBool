@@ -199,10 +199,12 @@
 </nav>
 <div class="main-content">
     <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Pesquisar...">
-        <input class="guests-input" type="text" id="txtBuscaH" placeholder="Nome" name="name"/>
-        <input class="guests-input" type="text" id="txtBuscaH" placeholder="Sobrenome" name="last_name"/>
-        <input class="guests-input" type="text" id="txtBuscaH" placeholder="CPF" name="cpf"/>
+        <form action="/funcionarios" method="post" >
+            <input class="guests-input" type="text" id="txtBuscaH" placeholder="Nome" name="pnome"/>
+            <input class="guests-input" type="text" id="txtBuscaH" placeholder="Sobrenome" name="scnome"/>
+            <input class="guests-input" type="text" id="txtBuscaH" placeholder="CPF" name="cpf"/>
+            <button type="submit" class="search-button">Pesquisar</button>
+        </form>
         <select id="filterSelect" onchange="redirectFuncionarioPage(this)">
             <option value="" disabled selected>Cargo</option>
             <option value="all">All</option>
@@ -210,7 +212,6 @@
             <option value="tratador"><a href="/tratadores">Tratador</a></option>
             <option value="zelador"><a href="/zeladores">Zelador</a></option>
         </select>
-        <button id="searchButton" onclick="searchData()">Pesquisar</button>
         <button id="editButton" onclick="searchData()">Editar</button>
 <!--        <button id="addButton" href="/addFuncionario">Cadastrar</button>-->
         <div class="guest-field" id="addButton">

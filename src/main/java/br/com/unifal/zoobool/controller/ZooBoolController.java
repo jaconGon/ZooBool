@@ -238,6 +238,13 @@ public class ZooBoolController {
         return "redirect:/funcionarios";
     }
 
+    @PostMapping("/funcionarios")
+    public String findFilteredGuests(Model model, @ModelAttribute Funcionario funcionario){
+        List<Funcionario> funcionarios = funcionarioservice.findByFilter(funcionario.getPnome(), funcionario.getSnome(), funcionario.getCpf());
+        model.addAttribute("funcionarios", funcionarios);
+        return "funcionarios";
+    }
+
 
 
     //==============================alas=================================//

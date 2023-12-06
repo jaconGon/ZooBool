@@ -57,4 +57,8 @@ public class FuncionarioService {
         throw new FuncionarioNotFoundException(String.format("Funcionario with id[%d] not found!!", id));
     }
 
+    public List<Funcionario> findByFilter(String pnome, String snome, String cpf){
+        return repository.findByFilter(pnome, snome, cpf);
+    }
+
 }
