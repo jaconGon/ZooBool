@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 @Getter
@@ -20,5 +21,8 @@ public class Ala implements Serializable {
     private Integer id_ala;
 
     private String tamanho;
+
+    @OneToMany(mappedBy = "id_ala")
+    private List<Habitat> habitats;
 
 }

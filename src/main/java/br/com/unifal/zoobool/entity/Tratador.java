@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 @Getter
@@ -22,4 +23,7 @@ public class Tratador implements Serializable {
     private Integer id_func;
 
     private String tipo_func;
+
+    @OneToMany(mappedBy = "id_tratador")
+    private List<Habitat> habitats;
 }

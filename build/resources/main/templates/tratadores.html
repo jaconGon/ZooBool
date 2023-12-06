@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZooBoolDB</title>
+</head>
+<body>
+<header>
+    <h1>Tratadores</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>IdTratador</th>
+            <th>IdFuncionário</th>
+            <th>TipoFuncionário</th>
+        </tr>
+        <tr th:each="tratador : ${tratadores}">
+            <td><span th:text="${tratador.pnome}"></span></td>
+            <td><span th:text="${tratador.id_func}"></span></td>
+            <td><span th:text="${tratador.tipo_func}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>

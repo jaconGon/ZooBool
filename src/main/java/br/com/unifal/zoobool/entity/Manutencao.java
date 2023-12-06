@@ -21,5 +21,14 @@ public class Manutencao implements Serializable {
 
     private Integer id_zelador;
 
+    @ManyToOne
+    @JoinColumn(name = "id_zelador")
+    private Zelador zelador;
+
+    @ManyToOne
+    @JoinColumn(name = "id_ala")
+    private Ala ala;
+
+
 
 }

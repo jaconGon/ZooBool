@@ -28,5 +28,14 @@ public class Habitat implements Serializable {
     private Integer n_especies;
 
     private String horario_trat;
+
+    @ManyToOne
+    @JoinColumn(name= "id_ala")
+    private Ala ala;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tratador")
+    private Tratador tratador;
+
     
 }

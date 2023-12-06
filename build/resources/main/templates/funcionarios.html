@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ZooBoolDB</title>
 </head>
 <body>
 <header>
-    <h1>All users in the Blog</h1>
+    <h1>Funcionários</h1>
 </header>
 <main>
     <table>
         <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Website</th>
-            <th>Website</th>
+            <th>IdFuncionário</th>
+            <th>PrimNome</th>
+            <th>SecNome</th>
+            <th>CPF</th>
+            <th>HorasTrabalho</th>
+            <th>Salário</th>
+            <th>Telefone</th>
         </tr>
         <tr th:each="funcionario : ${funcionarios}">
             <td><span th:text="${funcionario.id_func}"></span></td>

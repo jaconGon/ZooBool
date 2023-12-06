@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 @Getter
@@ -23,4 +24,7 @@ public class Veterinario implements Serializable {
     private String dias_de_plantao;
 
     private String especialidade;
+
+    @OneToMany(mappedBy = "id_vet")
+    private List<Animal> animais;
 }

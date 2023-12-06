@@ -37,4 +37,7 @@ public class Animal implements Serializable {
 
     private Float peso;
 
+    @ManyToOne
+    @JoinColumn(name= "id_vet")
+    private Veterinario veterinario;
 }
