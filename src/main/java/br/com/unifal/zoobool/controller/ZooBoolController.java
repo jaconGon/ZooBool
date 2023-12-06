@@ -134,7 +134,7 @@ public class ZooBoolController {
     public String orderedAnimalAtoZ(Model model) {
         List<Animal> animais = animalservice.orderAnimalAtoZ();
         model.addAttribute("animais", animais);
-        return "ordered-animals";
+        return "ordered-animals-a";
 
     }
 
@@ -142,8 +142,7 @@ public class ZooBoolController {
     public String orderedAnimalZtoA(Model model) {
         List<Animal> animais = animalservice.orderAnimalZtoA();
         model.addAttribute("animais", animais);
-        return "ordered-animals";
-
+        return "ordered-animals-z";
     }
 
 

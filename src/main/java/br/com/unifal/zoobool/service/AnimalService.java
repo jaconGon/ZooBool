@@ -52,6 +52,7 @@ public class AnimalService {
 
     public void saveAnimal(Animal animal) {
         repository.save(animal);
+    }
 
     public List<Animal> orderAnimalZtoA() {
         return repository.orderAnimalZtoA();
