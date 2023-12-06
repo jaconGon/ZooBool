@@ -48,4 +48,8 @@ public class AnimalService {
         return repository.orderAnimalAtoZ();
     }
 
+    public List<Animal> orderAnimalZtoA() {
+        return repository.orderAnimalZtoA();
+    }
+
 }
