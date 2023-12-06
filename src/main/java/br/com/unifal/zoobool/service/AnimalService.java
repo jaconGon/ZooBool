@@ -59,4 +59,14 @@ public class AnimalService {
 
     }
 
+    public List<Animal> filtroTam() {
+        return repository.filtroTam();
+
+    }
+
+    public List<Animal> filtroTipo() {
+        return repository.filtroTipo();
+
+    }
+
 }
