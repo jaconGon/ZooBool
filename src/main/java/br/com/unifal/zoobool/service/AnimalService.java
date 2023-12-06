@@ -45,6 +45,13 @@ public class AnimalService {
         }
         return repository.save(animal);
     }
+  
+   public void deleteAnimal(Integer id) {
+        if (!Objects.isNull(findById(id))) {
+            repository.deleteById(id);
+        }
+        throw new AnimalNotFoundException(String.format("Animal with id[%d] not found!!", id));
+    }
 
     public List<Animal> orderAnimalAtoZ() {
         return repository.orderAnimalAtoZ();
@@ -70,11 +77,23 @@ public class AnimalService {
 
     }
 
-    public void deleteAnimal(Integer id) {
-        if (!Objects.isNull(findById(id))) {
-            repository.deleteById(id);
-        }
-        throw new AnimalNotFoundException(String.format("Animal with id[%d] not found!!", id));
+  
+    public List<Animal> filtroNome() {
+        return repository.filtroNome();
+
     }
+
+    public List<Animal> filtroHabPe() {
+        return repository.filtroHabPe();
+
+    }
+
+    public List<Animal> filtroVetPe(){
+        return repository.filtroVetPe();
+
+    }
+
+
+
 
 }

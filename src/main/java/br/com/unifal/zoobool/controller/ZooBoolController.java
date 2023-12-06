@@ -166,6 +166,32 @@ public class ZooBoolController {
 
     }
 
+    @GetMapping("/filtronome")
+    public String filtro_nome(Model model) {
+        List<Animal> animais = animalservice.filtroNome();
+        model.addAttribute("animais", animais);
+        return "filtered-animals-no";
+
+    }
+
+    @GetMapping("/filtropequenohab")
+    public String filtro_HabPe(Model model) {
+        List<Animal> animais = animalservice.filtroHabPe();
+        model.addAttribute("animais", animais);
+        return "filtered-animals-habpe";
+
+    }
+
+    @GetMapping("/filtrovetpeso")
+    public String filtro_VetPe(Model model) {
+        List<Animal> animais = animalservice.filtroVetPe();
+        model.addAttribute("animais", animais);
+        return "filtered-animals-vetpe";
+
+    }
+
+
+
 
     //============================funcionarios============================//
 
