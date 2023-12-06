@@ -170,28 +170,6 @@
     <p>Welcome to our zoo, where you can experience the wonders of the animal kingdom!</p>
     <button onclick="exploreZoo()">Explore Now</button>
   </div>
-  <main>
-    <table>
-      <tr>
-        <th>IdFuncionário</th>
-        <th>PrimNome</th>
-        <th>SecNome</th>
-        <th>CPF</th>
-        <th>HorasTrabalho</th>
-        <th>Salário</th>
-        <th>Telefone</th>
-      </tr>
-      <tr th:each="funcionario : ${funcionarios}">
-        <td><span th:text="${funcionario.id_func}"></span></td>
-        <td><span th:text="${funcionario.pnome}"></span></td>
-        <td><span th:text="${funcionario.snome}"></span></td>
-        <td><span th:text="${funcionario.cpf}"></span></td>
-        <td><span th:text="${funcionario.horas_trabalho}"></span></td>
-        <td><span th:text="${funcionario.salario}"></span></td>
-        <td><span th:text="${funcionario.telefone}"></span></td>
-      </tr>
-    </table>
-  </main>
 
   <script>
     function exploreZoo() {
