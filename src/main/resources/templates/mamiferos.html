@@ -165,7 +165,7 @@
 <body>
 <header>
     <h1>ZooBool</h1>
-    <h1>Animais</h1>
+    <h1>Mamíferos</h1>
 </header>
 <nav>
     <a href="/home">Home</a>
@@ -183,7 +183,7 @@
         <select id="filterSelect">
             <option value="mamifero"><a href="/mamiferos">Mamífero</a></option>
             <option value="" disabled selected>Classe</option>
-            <option value="all">All</option>
+            <option value="all"><a href="/animals">All</a></option>
             <option value="reptil"><a href="/repteis">Réptil</a></option>
         </select>
         <input type="number" id="resultsNumber" placeholder="Results per page" min="1">
@@ -209,5 +209,20 @@
         </tr>
     </table>
 </main>
+<script>
+    function redirectAnimalPage(select) {
+        var selectedValue = select.value;
+
+        if (selectedValue === "mamifero") {
+            window.location.href = "/mamiferos"; // Substitua pelo URL mapeado no Spring Boot
+        } else if (selectedValue === "reptil") {
+            window.location.href = "/repteis"; // Substitua pelo URL mapeado no Spring Boot para répteis
+        } else if (selectedValue === "all") {
+            window.location.href = "/animals"; // Substitua pelo URL mapeado no Spring Boot para répteis
+        }
+        // Adicione outras condições conforme necessário para diferentes opções
+    }
+
+</script>
 </body>
 </html>
