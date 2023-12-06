@@ -68,19 +68,12 @@ public class ZooBoolController {
         return "animals";
     }
 
-//    @GetMapping("/animal")
-//    public String animal(Animal animal) {
-//        return "newanimal";
-//    }
-//
-//
-//    @PostMapping("/animal")
-//    public String newAnimal(@ModelAttribute("animal") Animal animal) {
-//        log.info("Novo animal cadastrado");
-//        animalservice.add(animal);
-//        return "newanimal";
-//    }
-
+    @GetMapping("/mamiferosanimais")
+    public String animalMam(Model model) {
+        List<Animal> animals = animalservice.findAnimaisComMamiferos();
+        model.addAttribute("animals", animals);
+        return "mamiferos-animals";
+    }
     @GetMapping("/addAnimal")
     public String getAddAnimal(){
         return "new-animal";
@@ -239,6 +232,29 @@ public class ZooBoolController {
     }
 
 
+    @GetMapping("/funcionarioiddesc")
+    public String funcionarioIdDesc(Model model) {
+        List<Funcionario> funcionarios = funcionarioservice.funcionarioIdDesc();
+        model.addAttribute("funcionarios", funcionarios);
+        return "ordered-funcionarios1";
+
+    }
+
+    @GetMapping("/orderedfuncionarioatoz")
+    public String orderedFuncionarioAtoZ(Model model) {
+        List<Funcionario> funcionarios = funcionarioservice.orderFuncionarioAtoZ();
+        model.addAttribute("funcionarios", funcionarios);
+        return "ordered-funcionarios2";
+
+    }
+
+    @GetMapping("/orderedfuncionarioztoa")
+    public String orderedFuncionarioZtoA(Model model) {
+        List<Funcionario> funcionarios = funcionarioservice.orderFuncionarioZtoA();
+        model.addAttribute("funcionarios", funcionarios);
+        return "ordered-funcionarios3";
+
+    }
 
     //==============================alas=================================//
     @GetMapping("/alas")
@@ -274,6 +290,13 @@ public class ZooBoolController {
         return "zeladores";
     }
 
+    @GetMapping("/richzeladores")
+    public String zeladorRico(Model model) {
+        List<Zelador> zeladores = zeladorservice.findZeladoresWithHighSalary();
+        model.addAttribute("zeladores", zeladores);
+        return "filtered-zeladores";
+    }
+
     @GetMapping("/veterinarios")
     public String veterinario(Model model) {
         List<Veterinario> veterinarios = veterinarioservice.getAllVeterinarios();
@@ -281,11 +304,31 @@ public class ZooBoolController {
         return "veterinarios";
     }
 
+    @GetMapping("/vetmamiferos")
+    public String vetMamiferos(Model model) {
+        List<Veterinario> veterinarios = veterinarioservice.vetMamifero();
+        model.addAttribute("veterinarios", veterinarios);
+        return "vetmamiferos";
+    }
+
+    @GetMapping("/filtered-veterinarios")
+    public String vetHoras(Model model) {
+        List<Veterinario> veterinarios = veterinarioservice.findVeterinariosWithHighWorkHours();
+        model.addAttribute("veterinarios", veterinarios);
+        return "filtered-veterinarios";
+    }
+
     @GetMapping("/tratadores")
     public String tratador(Model model) {
         List<Tratador> tratadores = tratadorservice.getAllTratadores();
         model.addAttribute("tratadores", tratadores);
         return "tratadores";
+    }
+    @GetMapping("/filtered-tratadores")
+    public String filteredTratado(Model model) {
+        List<Tratador> tratadores = tratadorservice.findTratadoresWithHighSalary();
+        model.addAttribute("tratadores", tratadores);
+        return "filtered-tratadores";
     }
 
 }

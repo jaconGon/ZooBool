@@ -56,5 +56,17 @@ public class FuncionarioService {
         }
         throw new FuncionarioNotFoundException(String.format("Funcionario with id[%d] not found!!", id));
     }
+    public List<Funcionario> orderFuncionarioAtoZ() {
+        return repository.orderFuncionarioAtoZ();
+    }
 
+    public List<Funcionario> orderFuncionarioZtoA() {
+        return repository.orderFuncionariosZtoA();
+    }
+
+    public List<Funcionario> funcionarioIdDesc() {
+        return repository.funcionarioIdDesc();
+    }
 }
+
+

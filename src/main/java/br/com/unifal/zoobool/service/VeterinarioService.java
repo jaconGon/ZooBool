@@ -42,4 +42,12 @@ public class VeterinarioService {
         return repository.save(veterinario);
     }
 
+    public List<Veterinario> vetMamifero(){
+        return repository.vetMamifero();
+    }
+
+    public List<Veterinario> findVeterinariosWithHighWorkHours(){
+        return repository.findVeterinariosWithHighWorkHours();
+    }
+
 }

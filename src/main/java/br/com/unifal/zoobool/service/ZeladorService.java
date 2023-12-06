@@ -41,4 +41,9 @@ public class ZeladorService {
         return repository.save(zelador);
     }
 
+    public List<Zelador> findZeladoresWithHighSalary(){
+        return repository.findZeladoresWithHighSalary();
+    }
+
+
 }

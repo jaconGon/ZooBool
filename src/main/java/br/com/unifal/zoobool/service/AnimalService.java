@@ -92,7 +92,9 @@ public class AnimalService {
         return repository.filtroVetPe();
 
     }
-
+    public List<Animal> findAnimaisComMamiferos(){
+        return repository.findAnimaisComMamiferos();
+    }
 
 
 

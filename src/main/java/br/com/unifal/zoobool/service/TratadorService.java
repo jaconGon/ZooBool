@@ -41,4 +41,8 @@ public class TratadorService {
         return repository.save(tratador);
     }
 
+    public List<Tratador> findTratadoresWithHighSalary(){
+        return repository.findTratadoresWithHighSalary();
+    }
+
 }

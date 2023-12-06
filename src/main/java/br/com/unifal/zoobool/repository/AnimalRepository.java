@@ -34,6 +34,9 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
             "UNION select p from Animal p where p.peso = 30")
     List<Animal> filtroVetPe();
 
+    @Query("SELECT a FROM Animal a JOIN Mamifero m ON a.id_animal = m.id_animal")
+    List<Animal> findAnimaisComMamiferos();
 
-    
+
+
 }
