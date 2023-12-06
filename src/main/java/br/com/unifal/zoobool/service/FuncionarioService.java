@@ -22,7 +22,6 @@ public class FuncionarioService {
     private final FuncionarioRepository repository;
 
     public List<Funcionario> getAllFuncionarios(){
-
         return repository.findAll();
     }
 
@@ -45,6 +44,10 @@ public class FuncionarioService {
             throw new InvalidFuncionarioException();
         }
         return repository.save(funcionario);
+    }
+
+    public void saveFuncionario(Funcionario funcionario) {
+        repository.save(funcionario);
     }
 
 }
