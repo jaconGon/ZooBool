@@ -22,20 +22,23 @@ import java.util.List;
 public class ZooBoolController {
 
     private final AnimalService animalservice;
-
     private final FuncionarioService funcionarioservice;
-
     private final AlaService alaservice;
-
     private final HabitatService habitatService;
-
     private final ManutencaoService manutencaoService;
+
+
+//===============================index===============================//
 
     @GetMapping("/")
     public String getHome(){
         return "home";
     }
 
+
+
+
+//==============================animal===============================//
     @GetMapping("/animals")
     public String animal(Model model){
         List<Animal> animals = animalservice.getAllAnimals();
@@ -55,7 +58,15 @@ public class ZooBoolController {
         return "newanimal";
     }
 
+    @GetMapping("/orderedanimalatoz")
+    public String orderedAnimalAtoZ(Model model){
+        List<Animal> animais = animalservice.orderAnimalAtoZ();
+        model.addAttribute("animais", animais);
+        return "ordered-animals";
+    }
 
+
+//============================funcionarios============================//
     @GetMapping("/funcionarios")
     public String funcionario(Model model){
         List<Funcionario> funcionarios = funcionarioservice.getAllFuncionarios();
@@ -63,6 +74,10 @@ public class ZooBoolController {
         return "funcionarios";
     }
 
+
+
+
+//==============================alas=================================//
     @GetMapping("/alas")
     public String ala(Model model){
         List<Ala> alas = alaservice.getAllAlas();
@@ -70,6 +85,9 @@ public class ZooBoolController {
         return "alas";
     }
 
+
+
+//=============================habitats==============================//
     @GetMapping("/habitats")
     public String habitat(Model model){
         List<Habitat> habitats = habitatService.getAllHabitats();
@@ -77,11 +95,16 @@ public class ZooBoolController {
         return "habitats";
     }
 
+
+
+
+//==========================manutencoes=============================//
     @GetMapping("/manutencoes")
     public String manutencao(Model model){
         List<Manutencao> manutencoes = manutencaoService.getAllManutencoes();
         model.addAttribute("manutencoes", manutencoes);
         return "manutencoes";
     }
+
 
 }

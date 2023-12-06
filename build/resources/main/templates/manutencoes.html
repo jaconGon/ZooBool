@@ -9,11 +9,11 @@
     <table>
         <tr>
             <th>IdAla</th>
-            <th>Tamanho</th>
+            <th>IdZelador</th>
         </tr>
-        <tr th:each="ala : ${alas}">
-            <td><span th:text="${ala.id_ala}"></span></td>
-            <td><span th:text="${ala.tamanho}"></span></td>
+        <tr th:each="manutencao : ${manutencoes}">
+            <td><span th:text="${manutencao.id_ala}"></span></td>
+            <td><span th:text="${manutencao.id_zelador}"></span></td>
         </tr>
     </table>
 </main>
