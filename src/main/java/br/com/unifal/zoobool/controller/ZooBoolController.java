@@ -6,10 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -196,6 +193,14 @@ public class ZooBoolController {
 
         funcionarioservice.saveFuncionario(newFuncionario);
 
+        return "redirect:/funcionarios";
+    }
+
+    @GetMapping("/deleteFuncionario/{id_func}")
+    public String getFuncionario(@PathVariable Integer id_func, Model model) {
+        funcionarioservice.deleteFuncionario(id_func);
+        List<Funcionario> funcionarios = funcionarioservice.getAllFuncionarios();
+        model.addAttribute("funcionarios", funcionarios);
         return "redirect:/funcionarios";
     }
 

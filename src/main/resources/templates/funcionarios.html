@@ -223,6 +223,10 @@
             <td><span th:text="${funcionario.horas_trabalho}"></span></td>
             <td><span th:text="${funcionario.salario}"></span></td>
             <td><span th:text="${funcionario.telefone}"></span></td>
+            <td class="delete-link">
+                <a th:href="@{/deleteFuncionario/{id}(id=${funcionario.id_func})}" onclick="return confirm('Deletar funcionário?')">x</a>
+<!--                <a th:href="@{/updateGuest/{id}(id=${guest.guest_id})}">^</a>-->
+            </td>
         </tr>
     </table>
 </main>
