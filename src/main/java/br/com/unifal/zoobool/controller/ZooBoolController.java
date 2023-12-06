@@ -68,7 +68,7 @@ public class ZooBoolController {
         return "animals";
     }
 
-    @GetMapping("/mamiferosanimais")
+    @GetMapping("/mamiferosanimals")
     public String animalMam(Model model) {
         List<Animal> animals = animalservice.findAnimaisComMamiferos();
         model.addAttribute("animals", animals);
