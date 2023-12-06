@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZooBoolDB</title>
+</head>
+<body>
+<main>
+    <table>
+        <tr>
+            <th>IdAla</th>
+            <th>IdZelador</th>
+        </tr>
+        <tr th:each="manutencao : ${manutencoes}">
+            <td><span th:text="${manutencao.id_ala}"></span></td>
+            <td><span th:text="${manutencao.id_zelador}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
