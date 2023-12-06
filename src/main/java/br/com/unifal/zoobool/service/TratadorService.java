@@ -17,7 +17,7 @@ public class TratadorService {
 
     private final TratadorRepository repository;
 
-    public List<Tratador> getAllHabitats(){
+    public List<Tratador> getAllTratadores(){
 
         return repository.findAll();
     }

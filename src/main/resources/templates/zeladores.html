@@ -16,9 +16,9 @@
             <th>TipoFuncionário</th>
         </tr>
         <tr th:each="zelador : ${zeladores}">
-            <td><span th:text="${Zelador.id_zelador}"></span></td>
-            <td><span th:text="${Zelador.id_func}"></span></td>
-            <td><span th:text="${Zelador.tipo_func}"></span></td>
+            <td><span th:text="${zelador.id_zelador}"></span></td>
+            <td><span th:text="${zelador.id_func}"></span></td>
+            <td><span th:text="${zelador.tipo_func}"></span></td>
         </tr>
     </table>
 </main>

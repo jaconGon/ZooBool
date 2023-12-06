@@ -16,7 +16,7 @@
             <th>TipoFuncionário</th>
         </tr>
         <tr th:each="tratador : ${tratadores}">
-            <td><span th:text="${tratador.pnome}"></span></td>
+            <td><span th:text="${tratador.id_tratador}"></span></td>
             <td><span th:text="${tratador.id_func}"></span></td>
             <td><span th:text="${tratador.tipo_func}"></span></td>
         </tr>

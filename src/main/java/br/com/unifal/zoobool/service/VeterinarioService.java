@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import br.com.unifal.zoobool.exception.VeterinarioNotFoundException;
 import java.util.List;
-import br.com.unifal.zoobool.exception.InvalidTratadorException;
 import java.util.Objects;
 
 
@@ -18,7 +17,7 @@ public class VeterinarioService {
 
     private final VeterinarioRepository repository;
 
-    public List<Veterinario> getAllHabitats(){
+    public List<Veterinario> getAllVeterinarios(){
 
         return repository.findAll();
     }
