@@ -39,20 +39,19 @@ public class ZooBoolController {
 //===============================index===============================//
 
     @GetMapping("/")
-    public String getIndex(){
+    public String getIndex() {
         return "index";
     }
+
     @GetMapping("/home")
-    public String getHome(){
+    public String getHome() {
         return "home";
     }
 
-
-
-
+    
 //==============================animal===============================//
     @GetMapping("/animals")
-    public String animal(Model model){
+    public String animal(Model model) {
         List<Animal> animals = animalservice.getAllAnimals();
         model.addAttribute("animals", animals);
         return "animals";
@@ -60,7 +59,7 @@ public class ZooBoolController {
 
 
     @GetMapping("/animal")
-    public String animal(Animal animal){
+    public String animal(Animal animal) {
         return "newanimal";
     }
 
@@ -74,27 +73,22 @@ public class ZooBoolController {
 
 
     @GetMapping("/mamiferos")
-    public String mamifero(Model model){
+    public String mamifero(Model model) {
         List<Mamifero> mamiferos = mamiferoservice.getAllMamiferos();
         model.addAttribute("mamiferos", mamiferos);
         return "mamiferos";
     }
 
     @GetMapping("/repteis")
-    public String Reptil(Model model){
+    public String Reptil(Model model) {
         List<Reptil> repteis = reptilservice.getAllRepteis();
         model.addAttribute("repteis", repteis);
         return "repteis";
     }
 
-    @GetMapping("/animals")
-    public String animal(Model model){
-        List<Animal> animals = animalservice.getAllAnimals();
-        model.addAttribute("animals", animals);
-        return "animals";
 
     @GetMapping("/orderedanimalatoz")
-    public String orderedAnimalAtoZ(Model model){
+    public String orderedAnimalAtoZ(Model model) {
         List<Animal> animais = animalservice.orderAnimalAtoZ();
         model.addAttribute("animais", animais);
         return "ordered-animals";
@@ -102,41 +96,36 @@ public class ZooBoolController {
     }
 
 
-//============================funcionarios============================//
+    //============================funcionarios============================//
     @GetMapping("/funcionarios")
-    public String funcionario(Model model){
+    public String funcionario(Model model) {
         List<Funcionario> funcionarios = funcionarioservice.getAllFuncionarios();
         model.addAttribute("funcionarios", funcionarios);
         return "funcionarios";
     }
 
 
-
-
-//==============================alas=================================//
+    //==============================alas=================================//
     @GetMapping("/alas")
-    public String ala(Model model){
+    public String ala(Model model) {
         List<Ala> alas = alaservice.getAllAlas();
         model.addAttribute("alas", alas);
         return "alas";
     }
 
 
-
-//=============================habitats==============================//
+    //=============================habitats==============================//
     @GetMapping("/habitats")
-    public String habitat(Model model){
+    public String habitat(Model model) {
         List<Habitat> habitats = habitatservice.getAllHabitats();
         model.addAttribute("habitats", habitats);
         return "habitats";
     }
 
 
-
-
-//==========================manutencoes=============================//
+    //==========================manutencoes=============================//
     @GetMapping("/manutencoes")
-    public String manutencao(Model model){
+    public String manutencao(Model model) {
         List<Manutencao> manutencoes = manutencaoservice.getAllManutencoes();
         model.addAttribute("manutencoes", manutencoes);
         return "manutencoes";
@@ -144,25 +133,23 @@ public class ZooBoolController {
 
 
     @GetMapping("/zeladores")
-    public String zelador(Model model){
+    public String zelador(Model model) {
         List<Zelador> zeladores = zeladorservice.getAllZeladores();
         model.addAttribute("zeladores", zeladores);
         return "zeladores";
     }
 
     @GetMapping("/veterinarios")
-    public String veterinario(Model model){
+    public String veterinario(Model model) {
         List<Veterinario> veterinarios = veterinarioservice.getAllVeterinarios();
         model.addAttribute("veterinarios", veterinarios);
         return "veterinarios";
     }
 
     @GetMapping("/tratadores")
-    public String tratador(Model model){
+    public String tratador(Model model) {
         List<Tratador> tratadores = tratadorservice.getAllTratadores();
         model.addAttribute("tratadores", tratadores);
         return "tratadores";
     }
-
-
 }
