@@ -160,6 +160,37 @@
             color: #eee; /* Mudando a cor ao passar o mouse */
         }
 
+        .btn-cadastrar {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #339966;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* Para remover o sublinhado */
+            margin-top: 10px;
+            margin-right: 10px; /* Espaço entre os botões */
+        }
+
+        .btn-cadastrar:hover {
+            background-color: #2a7e5b;
+        }
+
+        .delete-button {
+            text-decoration: none;
+            color: white;
+            background-color: #ff6347;
+            padding: 4px 8px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .delete-button:hover {
+            background-color: #ff0000;
+        }
+
     </style>
 </head>
 <body>
@@ -178,21 +209,18 @@
     <div class="search-container">
         <input type="text" id="searchInput" placeholder="Pesquisar...">
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="Nome" name="name"/>
-        <input class="guests-input" type="text" id="txtBuscaH" placeholder="Sobrenome" name="last_name"/>
-        <input class="guests-input" type="text" id="txtBuscaH" placeholder="CPF" name="cpf"/>
-        <select id="filterSelect">
+        <input class="guests-input" type="text" id="txtBuscaH" placeholder="Especie" name="especie"/>
+        <select id="filterSelect" onchange="redirectAnimalPage(this)">
             <option value="" disabled selected>Classe</option>
-            <option value="all">All</option>
+            <option value="all"><a href="/animals">All</a></option>
             <option value="mamifero">Mamífero</option>
             <option value="reptil">Réptil</option>
         </select>
-        <input type="number" id="resultsNumber" placeholder="Results per page" min="1">
         <button id="searchButton" onclick="searchData()">Pesquisar</button>
         <button id="editButton" onclick="searchData()">Editar</button>
         <div class="guest-field" id="addButton">
-            <a href="/addAnimal">Cadastrar</a>
+            <a href="/addFuncionario" class="btn-cadastrar">Cadastrar</a>
         </div>
-        <button id="removeButton" onclick="removeInfo()">Remover</button>
     </div>
 </div>
 <main>
@@ -218,8 +246,27 @@
             <td><span th:text="${animal.nome}"></span></td>
             <td><span th:text="${animal.idade}"></span></td>
             <td><span th:text="${animal.peso}"></span></td>
+            <td class="delete-link">
+                <a th:href="@{/deleteAnimal/{id}(id=${animal.id_animal})}" onclick="return confirm('Deletar animal?')" class="delete-button">x</a>
+                <!--                <a th:href="@{/updateGuest/{id}(id=${guest.guest_id})}">^</a>-->
+            </td>
         </tr>
     </table>
 </main>
+<script>
+    function redirectAnimalPage(select) {
+        var selectedValue = select.value;
+
+        if (selectedValue === "mamifero") {
+            window.location.href = "/mamiferos"; // Substitua pelo URL mapeado no Spring Boot
+        } else if (selectedValue === "reptil") {
+            window.location.href = "/repteis"; // Substitua pelo URL mapeado no Spring Boot para répteis
+        } else if (selectedValue === "all") {
+            window.location.href = "/animals"; // Substitua pelo URL mapeado no Spring Boot para répteis
+        }
+        // Adicione outras condições conforme necessário para diferentes opções
+    }
+
+</script>
 </body>
 </html>

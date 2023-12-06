@@ -3,6 +3,7 @@ package br.com.unifal.zoobool.service;
 import br.com.unifal.zoobool.entity.Animal;
 import br.com.unifal.zoobool.entity.Funcionario;
 import br.com.unifal.zoobool.exception.AnimalNotFoundException;
+import br.com.unifal.zoobool.exception.FuncionarioNotFoundException;
 import br.com.unifal.zoobool.exception.InvalidAnimalException;
 import br.com.unifal.zoobool.repository.AnimalRepository;
 import lombok.AllArgsConstructor;
@@ -44,6 +45,13 @@ public class AnimalService {
         }
         return repository.save(animal);
     }
+  
+   public void deleteAnimal(Integer id) {
+        if (!Objects.isNull(findById(id))) {
+            repository.deleteById(id);
+        }
+        throw new AnimalNotFoundException(String.format("Animal with id[%d] not found!!", id));
+    }
 
     public List<Animal> orderAnimalAtoZ() {
         return repository.orderAnimalAtoZ();
@@ -69,6 +77,7 @@ public class AnimalService {
 
     }
 
+  
     public List<Animal> filtroNome() {
         return repository.filtroNome();
 
@@ -83,6 +92,7 @@ public class AnimalService {
         return repository.filtroVetPe();
 
     }
+
 
 
 

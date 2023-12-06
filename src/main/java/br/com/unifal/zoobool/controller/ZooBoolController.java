@@ -6,10 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -114,6 +111,14 @@ public class ZooBoolController {
         return "redirect:/animals";
     }
 
+    @GetMapping("/deleteAnimal/{id_animal}")
+    public String getAnimal(@PathVariable Integer id_animal, Model model) {
+        animalservice.deleteAnimal(id_animal);
+        List<Animal> animais = animalservice.getAllAnimals();
+        model.addAttribute("animais", animais);
+        return "redirect:/animals";
+    }
+
 
     @GetMapping("/mamiferos")
     public String mamifero(Model model) {
@@ -134,7 +139,7 @@ public class ZooBoolController {
     public String orderedAnimalAtoZ(Model model) {
         List<Animal> animais = animalservice.orderAnimalAtoZ();
         model.addAttribute("animais", animais);
-        return "ordered-animals";
+        return "ordered-animals-a";
 
     }
 
@@ -142,8 +147,7 @@ public class ZooBoolController {
     public String orderedAnimalZtoA(Model model) {
         List<Animal> animais = animalservice.orderAnimalZtoA();
         model.addAttribute("animais", animais);
-        return "ordered-animals";
-
+        return "ordered-animals-z";
     }
 
     @GetMapping("/filtrotam")
@@ -223,6 +227,14 @@ public class ZooBoolController {
 
         funcionarioservice.saveFuncionario(newFuncionario);
 
+        return "redirect:/funcionarios";
+    }
+
+    @GetMapping("/deleteFuncionario/{id_func}")
+    public String getFuncionario(@PathVariable Integer id_func, Model model) {
+        funcionarioservice.deleteFuncionario(id_func);
+        List<Funcionario> funcionarios = funcionarioservice.getAllFuncionarios();
+        model.addAttribute("funcionarios", funcionarios);
         return "redirect:/funcionarios";
     }
 
