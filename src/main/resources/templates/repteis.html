@@ -178,15 +178,13 @@
     <div class="search-container">
         <input type="text" id="searchInput" placeholder="Pesquisar...">
         <input class="guests-input" type="text" id="txtBuscaH" placeholder="Nome" name="name"/>
-        <input class="guests-input" type="text" id="txtBuscaH" placeholder="Sobrenome" name="last_name"/>
-        <input class="guests-input" type="text" id="txtBuscaH" placeholder="CPF" name="cpf"/>
+        <input class="guests-input" type="text" id="txtBuscaH" placeholder="Especie" name="especie"/>
         <select id="filterSelect" onchange="redirectAnimalPage(this)">
             <option value="" disabled selected>Classe</option>
             <option value="all"><a href="/animals">All</a></option>
             <option value="mamifero">Mamífero</option>
             <option value="reptil">Réptil</option>
         </select>
-        <input type="number" id="resultsNumber" placeholder="Results per page" min="1">
         <button id="searchButton" onclick="searchData()">Pesquisar</button>
         <button id="editButton" onclick="searchData()">Editar</button>
         <div class="guest-field" id="addButton">
