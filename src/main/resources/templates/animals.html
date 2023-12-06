@@ -160,6 +160,23 @@
             color: #eee; /* Mudando a cor ao passar o mouse */
         }
 
+        .btn-cadastrar {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #339966;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* Para remover o sublinhado */
+            margin-top: 10px;
+            margin-right: 10px; /* Espaço entre os botões */
+        }
+
+        .btn-cadastrar:hover {
+            background-color: #2a7e5b;
+        }
+
     </style>
 </head>
 <body>
@@ -188,7 +205,7 @@
         <button id="searchButton" onclick="searchData()">Pesquisar</button>
         <button id="editButton" onclick="searchData()">Editar</button>
         <div class="guest-field" id="addButton">
-            <a href="/addAnimal">Cadastrar</a>
+            <a href="/addFuncionario" class="btn-cadastrar">Cadastrar</a>
         </div>
         <button id="removeButton" onclick="removeInfo()">Remover</button>
     </div>
