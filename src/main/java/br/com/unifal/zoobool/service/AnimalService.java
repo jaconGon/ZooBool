@@ -18,7 +18,7 @@ public class AnimalService {
     private final AnimalRepository repository;
 
     public List<Animal> getAllAnimals(){
-        //TODO: Fazer a conexão com o BD
+
         return repository.findAll();
     }
 

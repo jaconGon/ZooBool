@@ -1,8 +1,12 @@
 package br.com.unifal.zoobool.controller;
 
 
+import br.com.unifal.zoobool.entity.Ala;
 import br.com.unifal.zoobool.entity.Animal;
+import br.com.unifal.zoobool.entity.Funcionario;
+import br.com.unifal.zoobool.service.AlaService;
 import br.com.unifal.zoobool.service.AnimalService;
+import br.com.unifal.zoobool.service.FuncionarioService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -18,7 +22,11 @@ import java.util.List;
 @AllArgsConstructor
 public class ZooBoolController {
 
-    private final AnimalService service;
+    private final AnimalService animalservice;
+
+    private final FuncionarioService funcionarioservice;
+
+    private final AlaService alaservice;
 
     @GetMapping("/")
     public String getHome(){
@@ -27,7 +35,7 @@ public class ZooBoolController {
 
     @GetMapping("/animals")
     public String animal(Model model){
-        List<Animal> animals = service.getAllAnimals();
+        List<Animal> animals = animalservice.getAllAnimals();
         model.addAttribute("animals", animals);
         return "animals";
     }
@@ -40,8 +48,23 @@ public class ZooBoolController {
     @PostMapping("/animal")
     public String newAnimal(@ModelAttribute("animal") Animal animal) {
         log.info("Novo animal cadastrado");
-        service.add(animal);
+        animalservice.add(animal);
         return "newanimal";
+    }
+
+
+    @GetMapping("/funcionarios")
+    public String funcionario(Model model){
+        List<Funcionario> funcionarios = funcionarioservice.getAllFuncionarios();
+        model.addAttribute("funcionarios", funcionarios);
+        return "funcionarios";
+    }
+
+    @GetMapping("/alas")
+    public String ala(Model model){
+        List<Ala> alas = alaservice.getAllAlas();
+        model.addAttribute("alas", alas);
+        return "alas";
     }
 
 }

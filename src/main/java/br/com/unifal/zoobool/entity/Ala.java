@@ -12,28 +12,13 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "db2022108040", name = "animal")
+@Table(schema = "db2022108040", name = "ala")
 public class Ala implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_animal;
+    private Integer id_ala;
 
     private String tamanho;
-
-    private String n_cientifico;
-
-    private String especie;
-
-    private String nome;
-
-    private Integer id_habitat;
-
-    private Integer id_vet;
-
-    private Integer idade;
-
-    private Float peso;
-
 
 }

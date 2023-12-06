@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>-</title>
+</head>
+<body>
+<main>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+        </tr>
+        <tr th:each="ala : ${alas}">
+            <td><span th:text="${ala.id_ala}"></span></td>
+            <td><span th:text="${ala.tamanho}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
