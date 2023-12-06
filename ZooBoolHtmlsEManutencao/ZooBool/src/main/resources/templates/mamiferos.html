@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZooBoolDB</title>
+</head>
+<body>
+<header>
+    <h1>Mamíferos</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>IdAnimal</th>
+            <th>TempoGestação</th>
+            <th>TempoAmamentação</th>
+        </tr>
+        <tr th:each="mamifero : ${mamiferos}">
+            <td><span th:text="${mamifero.id_animal}"></span></td>
+            <td><span th:text="${mamifero.tempo_gestacao}"></span></td>
+            <td><span th:text="${mamifero.tempo_amam}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
