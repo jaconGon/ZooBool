@@ -1,0 +1,14 @@
+# Arquivos de saída gerados pelo Gradle
+build/
+
+# Arquivos de cache do Gradle
+.gradle/
+
+# Arquivos de configuração específicos do usuário para o Gradle
+gradle.properties
+
+# Logs de compilação e outros arquivos temporários do Gradle
+*.log
+
+# Cache de dependências do Gradle
+.caches/
