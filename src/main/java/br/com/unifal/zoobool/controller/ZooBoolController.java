@@ -4,9 +4,11 @@ package br.com.unifal.zoobool.controller;
 import br.com.unifal.zoobool.entity.Ala;
 import br.com.unifal.zoobool.entity.Animal;
 import br.com.unifal.zoobool.entity.Funcionario;
+import br.com.unifal.zoobool.entity.Habitat;
 import br.com.unifal.zoobool.service.AlaService;
 import br.com.unifal.zoobool.service.AnimalService;
 import br.com.unifal.zoobool.service.FuncionarioService;
+import br.com.unifal.zoobool.service.HabitatService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,8 @@ public class ZooBoolController {
     private final FuncionarioService funcionarioservice;
 
     private final AlaService alaservice;
+
+    private final HabitatService habitatService;
 
     @GetMapping("/")
     public String getHome(){
@@ -65,6 +69,13 @@ public class ZooBoolController {
         List<Ala> alas = alaservice.getAllAlas();
         model.addAttribute("alas", alas);
         return "alas";
+    }
+
+    @GetMapping("/habitats")
+    public String habitat(Model model){
+        List<Habitat> habitats = habitatService.getAllHabitats();
+        model.addAttribute("habitats", habitats);
+        return "habitats";
     }
 
 }

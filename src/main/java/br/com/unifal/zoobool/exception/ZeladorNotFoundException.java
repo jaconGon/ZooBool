@@ -1,10 +1,13 @@
 package br.com.unifal.zoobool.exception;
 
+
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class FuncionarioNotFoundException extends RuntimeException{
-    public FuncionarioNotFoundException(String message){
+public class ZeladorNotFoundException extends RuntimeException {
+
+    public ZeladorNotFoundException(String message){
         super(message);
     }
+
 }
