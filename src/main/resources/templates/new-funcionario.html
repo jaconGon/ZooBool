@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Funcionário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .radio-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        label.radio-label {
+            display: inline-block;
+            cursor: pointer;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="radio"]:checked + label.radio-label {
+            background-color: #339966;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #339966;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2a7e5b;
+        }
+
+        select {
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+            appearance: none; /* Remove a aparência padrão do seletor */
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23339966" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Ícone personalizado para o seletor */
+            background-repeat: no-repeat;
+            background-position: right 8px top 50%; /* Posicionamento do ícone */
+            background-size: 24px; /* Tamanho do ícone */
+        }
+
+        select:focus {
+            outline: none; /* Remove o contorno ao focar */
+            border-color: #339966; /* Cor da borda ao focar */
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #339966;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Cadastro de Funcionário</h2>
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="registrationForm" action="/addFuncionario"  method="post">
+                <label for="pnome">Primeiro nome:</label>
+                <input type="text" name="pnome" required placeholder="Digite o primeiro nome">
+
+                <label for="snome">Segundo nome:</label>
+                <input type="text" name="snome" required placeholder="Digite o segundo nome">
+
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" required placeholder="Digite o CPF">
+
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" required placeholder="Digite o telefone">
+
+<!--                <label for="cargo">Cargo:</label>-->
+<!--                <select name="cargo" class="input-cargo" required>-->
+<!--                    <option value="" disabled selected>Cargo</option>-->
+<!--                    <option value="zelador">Zelador</option>-->
+<!--                    <option value="tratador">Tratador</option>-->
+<!--                    <option value="veterinario">Veterinário</option>-->
+<!--                </select>-->
+
+<!--                <label>Cargo:</label>-->
+<!--                <div class="radio-container">-->
+<!--                    <input type="radio" id="zelador" name="cargo" value="Zelador">-->
+<!--                    <label for="zelador" class="radio-label">Zelador</label>-->
+
+<!--                    <input type="radio" id="tratador" name="cargo" value="Tratador">-->
+<!--                    <label for="tratador" class="radio-label">Tratador</label>-->
+
+<!--                    <input type="radio" id="veterinario"  name="cargo" value="Veterinário">-->
+<!--                    <label for="veterinario" class="radio-label">Veterinário</label>-->
+<!--                </div>-->
+
+                <label for="horas_trabalho">Horas trabalhadas:</label>
+                <input type="number" name="horas_trabalho" required placeholder="Digite as horas trabalhadas">
+
+                <label for="salario">Salário:</label>
+                <input type="number" name="salario" required placeholder="Digite o salário">
+
+                <button onclick='submitRegister()' type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function submitRegister() {
+          alert("Cadastrado com sucesso!");
+        }
+    </script>
+</body>
+</html>
